@@ -1,0 +1,990 @@
+body {
+    background-color: #05070c;
+    background-image: linear-gradient(to bottom, rgba(5, 7, 12, 0.25), rgba(5, 7, 12, 0.55)), url("images/font.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #f1f5f9;
+}
+
+.div_container {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 100px;
+}
+
+.dota_badge{
+    display: grid;
+    text-align: start;
+    align-items: start;
+    justify-content: start;
+    padding-left: 20px;
+}
+
+.dota_badge_icon{
+    display: flex;
+    width: 50px;
+}
+
+.app-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    background: rgba(13, 17, 28, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 24px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   ШАПКА И ИДЕАЛЬНО ОТЦЕНТРОВАННАЯ НАВИГАЦИЯ
+   ========================================================= */
+
+.nav {
+    position: relative;
+    padding: 10px 0;
+}
+
+.bloc_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+}
+
+.bloc_logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo_title {
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+}
+
+.logo_subtitle {
+    font-weight: bold;
+    opacity: 0.4;
+}
+
+/* Строгое центрирование ссылок HEROES / SETTINGS */
+.dota_badge_Link {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0;
+    margin: 0;
+}
+
+.bloc_container div a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.bloc_container div a:hover {
+    color: #f8fafc;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.bloc_container div a.active {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+/* =========================================================
+   ПАНЕЛЬ ФИЛЬТРОВ И ПОИСКА
+   ========================================================= */
+
+.HeroesSearchFilter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: rgba(20, 26, 40, 0.6);
+    padding: 16px 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    background-color: rgba(10, 14, 22, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 10px 16px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.search-form:focus-within {
+    border-color: #38bdf8;
+    background-color: rgba(10, 14, 22, 1);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+}
+
+.search-heroes {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    padding: 0;
+}
+.search-heroes::placeholder {
+    color: #64748b;
+}
+
+.search-img {
+    width: 18px;
+    opacity: 0.5;
+}
+
+.filter-wrapper {
+    display: flex;
+    gap: 14px;
+}
+
+.filter {
+    background: rgba(10, 14, 22, 0.8);
+    border-radius: 12px;
+    padding: 8px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: border-color 0.2s;
+}
+.filter:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.select-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 140px;
+}
+
+.select-label {
+    font-weight: 700;
+    font-size: 10px;
+    color: #64748b;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.select-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.native-select {
+    width: 100%;
+    font-size: 13px;
+    font-weight: 500;
+    color: #f1f5f9;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 2px 0;
+    appearance: none;
+}
+
+.select-arrow {
+    position: absolute;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    color: #64748b;
+    pointer-events: none;
+}
+
+/* Кнопки атрибутов */
+.attr_buttons_container {
+    display: flex;
+    gap: 10px;
+}
+
+.attribute_btn {
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: rgba(10, 14, 22, 0.8);
+    border-radius: 12px;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.attribute_btn:hover {
+    background-color: rgba(30, 41, 59, 0.6);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+.attribute_btn.active {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(30, 58, 138, 0.3));
+    border-color: #38bdf8;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+}
+
+.attribute {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+/* =========================================================
+   СЕТКА И КАРТОЧКИ ГЕРОЕВ
+   ========================================================= */
+
+.heroes_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.heroes {
+    border-radius: 16px;
+    background: rgba(15, 22, 36, 0.9);
+    display: flex;
+    flex-direction: column;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+}
+.heroes:hover {
+    transform: translateY(-6px) scale(1.01);
+    border-color: rgba(56, 189, 248, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(56, 189, 248, 0.15);
+}
+
+.hero_image_container {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    background: #000;
+    overflow: hidden;
+    margin-bottom: -1px;
+}
+
+.heroes_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.4s ease;
+    z-index: 1;
+}
+.heroes:hover .heroes_img {
+    transform: scale(1.08);
+}
+
+.hero_card_gradient {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 80px;
+    background: linear-gradient(to top, rgba(15, 22, 36, 0.98), transparent);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.heroes_name {
+    position: absolute;
+    bottom: 10px;
+    left: 12px;
+    right: 44px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #f8fafc;
+    letter-spacing: 0.3px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 3;
+}
+
+.heroes_attr_icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 26px;
+    height: 26px;
+    background: rgba(10, 14, 22, 0.75);
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    padding: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    z-index: 3;
+}
+
+.compare_card_btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 26px;
+    height: 26px;
+    background: rgba(10, 14, 22, 0.75);
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    transition: all 0.2s ease;
+}
+.compare_card_btn:hover {
+    background: #38bdf8;
+    border-color: #38bdf8;
+    transform: scale(1.1);
+}
+.compare_card_btn.active {
+    background: #22c55e;
+    border-color: #22c55e;
+}
+
+.hero_card_content {
+    padding: 12px 16px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    justify-content: space-between;
+    background: rgba(15, 22, 36, 0.9);
+}
+
+.heroes_roles {
+    font-weight: 400;
+    font-size: 12px;
+    color: #94a3b8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.heroes_roles span {
+    color: #64748b;
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+.hr {
+    margin: 0;
+    border: none;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.complexity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: #64748b;
+}
+
+.complexity_p {
+    font-size: 15px;
+    color: #fbbf24;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.4);
+}
+
+/* =========================================================
+   ПАГИНАЦИЯ И СЕТТИНГС (ТЁМНЫЙ СТИЛЬ КНОПОК)
+   ========================================================= */
+
+.pagination {
+    display: flex;
+    color: #94a3b8;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 15px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.pagination button {
+    cursor: pointer;
+    background-color: rgba(15, 22, 36, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.pagination button:hover:not(:disabled) {
+    background-color: rgba(30, 41, 59, 0.9);
+    border-color: #38bdf8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(56, 189, 248, 0.2);
+}
+.pagination button:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+}
+
+/* Стилизация раздела SETTINGS и кнопки темы в ТЁМНОМ режиме */
+.Settings, .settings-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    ;
+}
+
+.Settings button,
+.theme-toggle-btn,
+button[onClick*="Theme"] {
+    margin: 10px    ;
+    background: rgba(20, 28, 44, 0.9);
+    color: #f1f5f9;
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    padding: 10px 22px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.Settings button:hover,
+.theme-toggle-btn:hover,
+button[onClick*="Theme"]:hover {
+    background: rgba(30, 41, 59, 1);
+    border-color: #38bdf8;
+    color: #38bdf8;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   СРАВНЕНИЕ И МОДАЛЬНЫЕ ОКНА
+   ========================================================= */
+
+.comparison_bar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(13, 17, 28, 0.95);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+    border-radius: 16px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.comparison_heroes_preview {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.comparison_preview_item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.05);
+    padding: 4px 10px 4px 4px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.comparison_preview_item img {
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.comparison_preview_item button {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 16px;
+}
+.comparison_preview_item button:hover {
+    color: #ef4444;
+}
+
+.comparison_placeholder {
+    color: #64748b;
+    font-size: 13px;
+    font-style: italic;
+}
+
+.open_compare_modal_btn {
+    background: linear-gradient(135deg, #38bdf8, #0284c7);
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+.open_compare_modal_btn:hover {
+    opacity: 0.9;
+}
+
+.compare_modal_backdrop {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(3, 5, 10, 0.85);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.compare_modal_content {
+    background: linear-gradient(135deg, rgba(15, 22, 36, 0.95), rgba(10, 14, 22, 0.98));
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    border-radius: 24px;
+    padding: 30px;
+    width: 95%;
+    max-width: 760px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.9), 0 0 40px rgba(56, 189, 248, 0.1);
+    box-sizing: border-box;
+}
+
+.compare_modal_header_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 15px;
+}
+
+.compare_modal_content h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, #f8fafc, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.compare_heroes_header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.compare_hero_head_col {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 12px 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.compare_hero_head_col img {
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.compare_hero_info h3 {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+.compare_hero_info span {
+    font-size: 12px;
+    color: #38bdf8;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+
+.compare_table {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto;
+    max-height: 420px;
+    padding-right: 6px;
+}
+
+.compare_row {
+    display: grid;
+    grid-template-columns: 1fr 130px 1fr;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    gap: 10px;
+}
+
+.compare_stat_name {
+    color: #94a3b8;
+    font-weight: 600;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.compare_val_side {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.compare_val_side.left {
+    justify-content: flex-start;
+}
+
+.compare_val_side.right {
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+}
+
+.compare_number {
+    min-width: 32px;
+}
+
+.compare_bar_track {
+    flex: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 3px;
+    overflow: hidden;
+    display: flex;
+}
+
+.compare_val_side.left .compare_bar_track {
+    justify-content: flex-end;
+}
+
+.compare_bar_fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.4s ease;
+}
+
+.close_modal_btn {
+    background: linear-gradient(135deg, #334155, #1e293b);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+.close_modal_btn:hover {
+    background: linear-gradient(135deg, #475569, #334155);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.isEmptyFilterSearch {
+    color: #94a3b8;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.Loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f1f5f9;
+    font-size: 24px;
+    font-weight: 600;
+    min-height: 400px;
+}
+
+select option {
+    background-color: #0f1624;
+    color: #f8fafc;
+    padding: 16px 16px;
+    font-weight: 500;
+}
+
+/* =========================================================
+   ИЗОЛИРОВАННАЯ И СТИЛЬНАЯ СВЕТЛАЯ ТЕМА [data-theme="light"]
+   ========================================================= */
+
+[data-theme="light"] .container {
+    background: rgba(245, 248, 252, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.22), inset 0 1px 1px rgba(255, 255, 255, 1);
+    color: #0f172a;
+}
+
+[data-theme="light"] .HeroesSearchFilter {
+    background: rgba(226, 232, 240, 0.75);
+    border: 1px solid rgba(203, 213, 225, 0.8);
+}
+
+[data-theme="light"] .search-form,
+[data-theme="light"] .filter,
+[data-theme="light"] .attribute_btn {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
+}
+
+[data-theme="light"] .search-form:focus-within {
+    border-color: #0284c7;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(2, 132, 199, 0.25);
+}
+
+[data-theme="light"] .search-heroes {
+    color: #0f172a;
+}
+[data-theme="light"] .search-heroes::placeholder {
+    color: #64748b;
+}
+
+[data-theme="light"] .select-label {
+    color: #475569;
+}
+
+[data-theme="light"] .native-select {
+    color: #0f172a;
+}
+
+[data-theme="light"] select option {
+    background-color: #ffffff;
+    color: #0f172a;
+}
+
+[data-theme="light"] .attribute_btn:hover {
+    background-color: #f1f5f9;
+    border-color: #0284c7;
+}
+
+[data-theme="light"] .attribute_btn.active {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(2, 132, 199, 0.15));
+    border-color: #0284c7;
+    box-shadow: 0 0 15px rgba(2, 132, 199, 0.3);
+}
+
+[data-theme="light"] .heroes,
+[data-theme="light"] .hero_card_content {
+    background: #ffffff;
+    border-color: #e2e8f0;
+    color: #0f172a;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .heroes:hover {
+    border-color: #0284c7;
+    box-shadow: 0 15px 35px rgba(2, 132, 199, 0.2);
+}
+
+[data-theme="light"] .hero_card_gradient {
+    background: linear-gradient(to top, #ffffff, transparent);
+}
+
+[data-theme="light"] .heroes_name {
+    color: #0f172a;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="light"] .heroes_roles {
+    color: #64748b;
+}
+[data-theme="light"] .heroes_roles span {
+    color: #334155;
+}
+
+[data-theme="light"] .complexity {
+    color: #64748b;
+}
+
+[data-theme="light"] .hr {
+    background-color: #e2e8f0;
+}
+
+[data-theme="light"] .heroes_attr_icon,
+[data-theme="light"] .compare_card_btn {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: #cbd5e1;
+    color: #0f172a;
+}
+
+[data-theme="light"] .pagination button {
+    background-color: #ffffff;
+    border-color: #cbd5e1;
+    color: #0f172a;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .pagination button:hover:not(:disabled) {
+    background-color: #f8fafc;
+    border-color: #0284c7;
+    color: #0284c7;
+}
+
+[data-theme="light"] .bloc_container div a {
+    color: #475569;
+}
+
+[data-theme="light"] .bloc_container div a:hover {
+    color: #0f172a;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .bloc_container div a.active {
+    color: #0284c7;
+    background: rgba(2, 132, 199, 0.12);
+    border-color: rgba(2, 132, 199, 0.3);
+}
+
+[data-theme="light"] .isEmptyFilterSearch {
+    color: #64748b;
+}
+
+[data-theme="light"] .compare_modal_content {
+    background: #ffffff;
+    border-color: #cbd5e1;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+[data-theme="light"] .compare_modal_content h2 {
+    background: linear-gradient(135deg, #0f172a, #334155);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+[data-theme="light"] .compare_hero_head_col,
+[data-theme="light"] .compare_row {
+    background: #f8fafc;
+    border-color: #e2e8f0;
+}
+
+[data-theme="light"] .compare_hero_info h3 {
+    color: #0f172a;
+}
+
+[data-theme="light"] .compare_stat_name {
+    color: #64748b;
+}
+
+[data-theme="light"] .comparison_bar {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: #0284c7;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+[data-theme="light"] .comparison_preview_item {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+/* Стилизация кнопки темы в Settings для LIGHT режима */
+[data-theme="light"] .Settings button,
+[data-theme="light"] .theme-toggle-btn,
+[data-theme="light"] button[onClick*="Theme"] {
+    background: #ffffff;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .Settings button:hover,
+[data-theme="light"] .theme-toggle-btn:hover,
+[data-theme="light"] button[onClick*="Theme"]:hover {
+    background: #f8fafc;
+    border-color: #0284c7;
+    color: #0284c7;
+}
+
